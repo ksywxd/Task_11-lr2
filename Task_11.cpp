@@ -21,6 +21,13 @@ int main() {
     std::cout << "Введите время окончания (часы и минуты): ";
     std::cin >> h2 >> min2;
 
+    if (h1 < 0 || h1 >= 24 || min1 < 0 || min1 >= 60 ||
+        h2 < 0 || h2 >= 24 || min2 < 0 || min2 >= 60) {
+        std::cout << "некорректное время" << std::endl;
+        return 1;
+    }
+
+
     int start = toMin(h1, min1);
     int end = toMin(h2, min2);
 
